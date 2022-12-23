@@ -1,0 +1,14 @@
+<div class="follower-card" [ngClass]="darkMode ? 'is-dark' : '' ">
+    <div class="line" [ngClass]="follower.social"></div>
+    <div class="platform">
+        <img [src]="'assets/images/icon-' + follower.social + '.svg'" [alt]="follower.social">
+        <p class="pseudo">{{ follower.pseudo }}</p>
+    </div>
+    <p class="followers_nbr">{{ follower.followers_nbr }}</p>
+    <p class="followers">Followers</p>
+    <div class="today" [ngClass]="follower.today_followers > 0 ? 'positive' : 'negative' ">
+        <img [src]="follower.today_followers > 0 ? 'assets/images/icon-up.svg' : 'assets/images/icon-down.svg'">
+        <p class="today_followers">{{ abs_value(follower.today_followers) }} Today</p>
+    </div>
+</div>
+

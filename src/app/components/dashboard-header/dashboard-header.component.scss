@@ -1,0 +1,106 @@
+@import '../../../variables';
+
+h2{
+    font-weight: 700;
+    margin-bottom: 0.1em;
+    color: $clr-Very-Dark-Blue-Light-Theme;
+}
+
+p{
+    color: $clr-Dark-Grayish-Blue-Light-Theme;
+    font-weight: 700;
+    font-size: $fs;
+}
+
+.line{
+    margin-block: 1em;
+    width: 100%;
+    border-top: 1px solid $clr-Dark-Grayish-Blue-Light-Theme;
+    opacity: 0.4;
+}
+
+label{
+    font-size: $fs;
+    font-weight: 700;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    &:hover{
+        .slider{
+            background: $clr-Toggle-Dark-Theme;
+            opacity: 1;
+        }
+    }
+}
+
+input[type="checkbox"]{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.slider{
+    position: relative;
+    width: 45px;
+    height: 20px;
+    background-color: $clr-Dark-Grayish-Blue-Light-Theme-op;
+    border-radius: 500px;
+    cursor: pointer;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.slider::after{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: 4px;
+    background-color: $clr-White;
+    transform: translate3d(21px, 0, 0);
+    transition: all 0.5s ease-in-out;
+}
+
+.is-dark{
+    h2{
+        color: $clr-White;
+    }
+    p, .line, label{
+        color: $clr-Desaturated-Blue-Dark-Theme;
+    }
+    .slider{
+        background: $clr-Toggle-Dark-Theme;
+    }
+    .slider::after{
+        transform: translate3d(0, 0, 0);
+        background-color: $clr-Dark-Desaturated-Blue-Dark-Theme;
+        transition: transform 0.5s ease-in-out;
+    }
+    label{
+        &:hover{
+            .slider::after{
+                background-color: lighten($clr-Dark-Desaturated-Blue-Dark-Theme, 10%);
+            }
+        }
+    }
+}
+
+@media (min-width: 600px){
+    .line{
+        display: none;
+    }
+    label{
+        width: max-content;
+    }
+    .slider{
+        margin-left: 10px;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,6 @@
+<div class="container" [ngClass]="darkMode ? 'is-dark' : ''">
+    <h2>Overview - Today</h2>
+    <div class="overview-container">
+        <app-overview-card *ngFor="let overview of overviews" [overview]="overview" [darkMode]="darkMode"></app-overview-card>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container" [ngClass]="darkMode ? 'is-dark' : ''">
+    <div class="total">
+        <h2>Social Media Dashboard</h2>
+        <p>Total Followers: 23,004</p>
+    </div>
+    <div class="line"></div>
+    <label for="toggle">Dark Mode
+        <input type="checkbox" (change)="toggle()" [value]="darkMode" id="toggle">
+        <div class="slider"></div>
+    </label>
+</div>

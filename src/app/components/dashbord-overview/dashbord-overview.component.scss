@@ -1,0 +1,20 @@
+@import '../../../variables';
+
+h2{
+    color: $clr-Dark-Grayish-Blue-Light-Theme;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.overview-container{
+    display: grid;
+    justify-content: center;
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+}
+
+.is-dark{
+    h2{
+        color: $clr-White;
+    }
+}

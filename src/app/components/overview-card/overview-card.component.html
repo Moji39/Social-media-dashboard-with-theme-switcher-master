@@ -1,0 +1,13 @@
+<div class="overview-card" [ngClass]="darkMode ? 'is-dark' : '' ">
+    <div class="item">
+        <p class="title">{{ overview.title }}</p>
+        <img [src]="'assets/images/icon-' + overview.social + '.svg'" [alt]="overview.social">
+    </div>
+    <div class="item">
+        <p class="nbr">{{ overview.overview_nbr }}</p>
+        <div class="percentage">
+            <img [src]="overview.overview_percentage > 0 ? 'assets/images/icon-up.svg' : 'assets/images/icon-down.svg' ">
+            <p [ngClass]="overview.overview_percentage > 0 ? 'positive' : 'negative'">{{ abs_value(overview.overview_percentage) }}%</p>
+        </div>
+    </div>
+</div>
